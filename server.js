@@ -1,11 +1,16 @@
 console.log("hello");
-const express = require("express"),
-app = express(),
-PORT = 8080;
+const express = require("express");
+require("dotenv").config();
+
+const app = express();
+
 
 app.get("*",(req,res)=>{
     res.send("hello there")
 })
+
+const PORT = process.env.PORT;
+
 app.listen(PORT,()=>{
     console.log(`listening to port ${PORT}`);
 })
